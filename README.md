@@ -1,5 +1,8 @@
 # Gentoo Plymouth theme
 
+<img width="478" height="358" alt="Gentoo Boot Progress Animation" src="https://github.com/user-attachments/assets/25651f38-0dbc-4089-a317-c4543a7447d5" />
+
+
 Gentoo-branded adaptation of the Apple Mac Plymouth theme. Includes the boot logo, shutdown frames, black background, progress bar and password dialog.
 
 ## Install on Gentoo
