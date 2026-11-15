@@ -1,7 +1,34 @@
-# Gentoo Plymouth — Vector Logo Fix
+# Gentoo Plymouth theme
 
-The logo is now rendered from a clean SVG path, not generated raster artwork. All seven PNGs have smooth antialiased edges, a transparent background and a visible transparent center.
+Gentoo-branded adaptation of the Apple Mac Plymouth theme. Includes the boot logo, shutdown frames, black background, progress bar and password dialog.
 
-Install: `sudo ./install.sh --rebuild` (requires Dracut). For manual initramfs workflows, use `sudo ./install.sh --no-rebuild` and rebuild the correct boot image yourself.
+## Install on Gentoo
 
-If the old logo still appears, confirm which initramfs your bootloader loads and rebuild that image.
+Ensure Plymouth is installed and enabled in your boot setup. Extract this archive, open a terminal in the extracted directory, and run:
+
+```bash
+unzip gentoo-plymouth.zip
+
+from the same directory run
+
+sudo ./install.sh
+```
+
+The installer copies the theme to `/usr/share/plymouth/themes/gentoo-plymouth`, selects it using `plymouth-set-default-theme`, and offers to rebuild the initramfs using Dracut when available.
+
+For noninteractive installation with Dracut rebuild:
+
+```bash
+sudo ./install.sh --rebuild
+```
+
+For systems using genkernel or another initramfs workflow:
+
+```bash
+sudo ./install.sh --no-rebuild
+```
+
+Then rebuild your initramfs using your normal Gentoo kernel workflow. The installer does not modify your kernel command line; Plymouth must already be configured to start during boot. To inspect selection: `plymouth-set-default-theme`.
+
+
+Artwork revision: replaced noisy raster logo with a cleaned, anti-aliased white logo and transparent inner cutout. All boot and shutdown frames updated. Rebuild your initramfs after installing.
